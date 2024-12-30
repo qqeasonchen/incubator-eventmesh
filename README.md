@@ -180,26 +180,21 @@ eventmesh-runtime-0-a-0               1/1     Running   0          15s
 
 ## Contributing
 
+[![GitHub repo Good Issues for newbies](https://img.shields.io/github/issues/apache/eventmesh/good%20first%20issue?style=flat&logo=github&logoColor=green&label=Good%20First%20issues)](https://github.com/apache/eventmesh/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) [![GitHub Help Wanted issues](https://img.shields.io/github/issues/apache/eventmesh/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20issues)](https://github.com/apache/eventmesh/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) [![GitHub Help Wanted PRs](https://img.shields.io/github/issues-pr/apache/eventmesh/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20PRs)](https://github.com/apache/eventmesh/pulls?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) [![GitHub repo Issues](https://img.shields.io/github/issues/apache/eventmesh?style=flat&logo=github&logoColor=red&label=Issues)](https://github.com/apache/eventmesh/issues?q=is%3Aopen)
+
 Each contributor has played an important role in promoting the robust development of Apache EventMesh. We sincerely appreciate all contributors who have contributed code and documents.
 
 - [Contributing Guideline](https://eventmesh.apache.org/community/contribute/contribute)
 - [Good First Issues](https://github.com/apache/eventmesh/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-
-Here is the [List of Contributors](https://github.com/apache/eventmesh/graphs/contributors), thank you all! :)
-
-<a href="https://github.com/apache/eventmesh/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=apache/eventmesh&max=2000" />
-</a>
 
 
 ## CNCF Landscape
 
 <div align="center">
 
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>
-<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
+<img src="https://landscape.cncf.io/images/cncf-landscape-horizontal-color.svg" width="200"/>
 
-Apache EventMesh enriches the <a href="https://landscape.cncf.io/serverless?license=apache-license-2-0">CNCF Cloud Native Landscape.</a>
+Apache EventMesh enriches the <a href="https://landscape.cncf.io/embed/embed.html?base-path=&key=serverless--framework&headers=true&category-header=true&category-in-subcategory=false&title-uppercase=false&title-alignment=left&title-font-family=sans-serif&title-font-size=13&style=shadowed&bg-color=%233e79b0&fg-color=%23ffffff&item-modal=false&item-name=false&size=md&items-alignment=left" style="width:100%;height:100%;display:block;border:none;">CNCF Cloud Native Landscape.</a>
 
 </div>
 

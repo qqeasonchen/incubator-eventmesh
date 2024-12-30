@@ -17,8 +17,18 @@
 
 package org.apache.eventmesh.admin.server.web.pojo;
 
+import org.apache.eventmesh.admin.server.web.db.entity.EventMeshJobInfo;
+
+import lombok.Data;
+
 /**
  * Description:
  */
+@Data
 public class TaskDetail {
+
+    private EventMeshJobInfo fullTask;
+
+    private EventMeshJobInfo increaseTask;
+
 }

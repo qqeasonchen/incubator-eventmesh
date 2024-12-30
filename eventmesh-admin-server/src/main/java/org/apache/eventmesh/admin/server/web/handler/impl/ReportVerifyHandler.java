@@ -29,6 +29,7 @@ import org.apache.eventmesh.common.remote.response.SimpleResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -75,7 +76,7 @@ public class ReportVerifyHandler extends BaseRequestHandler<ReportVerifyRequest,
                 + "request fail");
         } else {
             log.info("start transfer report verify to from region admin server. from region:{}", fromRegion);
-            List<String> adminServerList = properties.getAdminServerList().get(fromRegion);
+            List<String> adminServerList = Arrays.asList(properties.getAdminServerList().get(fromRegion).split(";"));
             if (adminServerList == null || adminServerList.isEmpty()) {
                 throw new RuntimeException("No admin server available for region: " + fromRegion);
             }

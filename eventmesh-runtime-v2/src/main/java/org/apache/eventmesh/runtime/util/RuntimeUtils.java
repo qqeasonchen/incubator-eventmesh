@@ -17,5 +17,18 @@
 
 package org.apache.eventmesh.runtime.util;
 
+import java.util.Random;
+
 public class RuntimeUtils {
+
+    public static String getRandomAdminServerAddr(String adminServerAddrList) {
+        String[] addresses = adminServerAddrList.split(";");
+        if (addresses.length == 0) {
+            throw new IllegalArgumentException("Admin server address list is empty");
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(addresses.length);
+        return addresses[randomIndex];
+    }
+
 }

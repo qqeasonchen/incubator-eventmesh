@@ -15,12 +15,24 @@
  * limitations under the License.
  */
 
-package org.apache.eventmesh.admin.server.constatns;
+package org.apache.eventmesh.common.remote.request;
 
-public class AdminServerConstants {
-    public static final String CONF_ENV = "configurationPath";
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-    public static final String EVENTMESH_CONF_HOME = System.getProperty(CONF_ENV, System.getenv(CONF_ENV));
-
-    public static final String EVENTMESH_CONF_FILE = "eventmesh-admin.properties";
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString
+public class ReportMonitorRequest extends BaseRemoteRequest {
+    private String taskID;
+    private String jobID;
+    private String address;
+    private String connectorStage;
+    private String transportType;
+    private long totalReqNum;
+    private long totalTimeCost;
+    private long maxTimeCost;
+    private long avgTimeCost;
+    private double tps;
 }

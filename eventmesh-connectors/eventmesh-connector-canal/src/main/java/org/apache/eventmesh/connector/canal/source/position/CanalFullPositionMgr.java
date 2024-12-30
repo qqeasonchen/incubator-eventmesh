@@ -34,6 +34,7 @@ import org.apache.eventmesh.connector.canal.source.table.RdbTableMgr;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.sql.Connection;
 import java.sql.JDBCType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -153,7 +154,8 @@ public class CanalFullPositionMgr extends AbstractComponent {
     private long queryCurTableRowCount(DataSource datasource, MySQLTableDef tableDefinition) throws SQLException {
         String sql = "select `AVG_ROW_LENGTH`,`DATA_LENGTH` from information_schema.TABLES where `TABLE_SCHEMA`='" + tableDefinition.getSchemaName()
             + "' and `TABLE_NAME`='" + tableDefinition.getTableName() + "'";
-        try (Statement statement = datasource.getConnection().createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
+        try (Connection conn = datasource.getConnection(); Statement statement = conn.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
             long result = 0L;
             if (resultSet.next()) {
                 long avgRowLength = resultSet.getLong("AVG_ROW_LENGTH");
@@ -201,7 +203,7 @@ public class CanalFullPositionMgr extends AbstractComponent {
         appendPrePrimaryKey(prePrimary, builder);
         String sql = builder.toString();
         log.info("fetch min primary sql [{}]", sql);
-        try (PreparedStatement statement = dataSource.getConnection().prepareStatement(sql)) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement statement = conn.prepareStatement(sql)) {
             setValue2Statement(statement, prePrimary, tableDefinition);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -226,7 +228,7 @@ public class CanalFullPositionMgr extends AbstractComponent {
         appendPrePrimaryKey(prePrimary, builder);
         String sql = builder.toString();
         log.info("fetch max primary sql [{}]", sql);
-        try (PreparedStatement statement = dataSource.getConnection().prepareStatement(sql)) {
+        try (Connection conn = dataSource.getConnection(); PreparedStatement statement = conn.prepareStatement(sql)) {
             setValue2Statement(statement, prePrimary, tableDefinition);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {

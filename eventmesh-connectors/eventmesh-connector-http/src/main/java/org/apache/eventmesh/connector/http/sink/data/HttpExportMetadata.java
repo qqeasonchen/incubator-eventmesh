@@ -40,8 +40,6 @@ public class HttpExportMetadata implements Serializable {
 
     private LocalDateTime receivedTime;
 
-    private String httpRecordId;
-
     private String recordId;
 
     private String retriedBy;
